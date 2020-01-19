@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<body>
+ There are 168 days in a Num Year, equal to one Earth week. <br>
+ A New Year begins every Wednesday at 19:00:00 EST.  <br>
+ Earth Day = Num <br>
+ Month Earth Week = Num Year <br> 
+ Earth Month = Num Era <br>
+ Earth Year = Num Age <br>
+ <br> 
+ Num months are: <br>
+Alpha  (α) <br>
+Beta (β) <br>
+Gamma (γ) <br>
+Delta (δ) <br>
+Epsilon (ε) <br>
+Zeta (ζ) <br>
+Eta (η) <br>
+There are 24 days in a month. <br>
+<br>
+Base in EST (For Example if you are PST, then subtract 3 from the day)
+
+<p id="demo"></p>
+
+<script>
+myFunction()
+function hourConvert(i) {
+	if  (i < 19) {
+		i = i + 6;
+		}
+	else if  (i >= 19) {
+		i = i - 18;
+		}	
+	if (i == 1) {
+		return i + "st";
+		}
+	if (i == 2) {
+		return i + "nd";
+		}
+	if (i == 3) {
+		return i + "rd";
+		}
+	if (i == 21) {
+		return i + "st";
+		}	
+	if (i == 22) {
+		return i + "nd";
+		}	
+	if (i == 23) {
+		return i + "rd";
+		}
+	else {
+		return i + "th"
+	}
+}
+
+function dayConvert(i1,i2) {
+  if (i2 >= 19) {
+	i1 = i1 + 1 	
+	}
+  
+  if (i1 == 0) {
+	return "Epsilon (ε)";
+	}
+  if (i1 == 1) {
+	return "Zeta (ζ)";
+	}
+  if (i1 == 2) {
+	return "Eta (η)";
+	}
+  if (i1 == 3) {
+	return "Alpha  (α)";
+	}
+  if (i1 == 4) {
+	return "Beta (β)";
+	}
+  if (i1 == 5) {
+	return "Gamma (γ)";
+	}
+  if (i1 == 6) {
+	return "Delta (δ)";
+	}
+  if (i1 == 7) {
+	return "Epsilon (ε)";
+	}	
+}
+
+function monthConvert(i) {
+  return i + 1 + "AZ";
+}
+
+function yearConvert(i) {
+  return i - 119;
+}
+
+function myFunction() {
+  var date = new Date();
+  var x = document.getElementById("demo");
+  var d = hourConvert(date.getHours());
+  var m = dayConvert(date.getDay(), date.getHours());
+  var y = monthConvert(date.getMonth());
+  var e = yearConvert(date.getYear());
+  x.innerHTML = "<b>" + "The Current Date is: " + m + " " + d + " " + y + " Era " + e + "</b>";
+}
+</script>
+
+</body>
+</html>
